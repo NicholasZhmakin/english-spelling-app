@@ -6,14 +6,16 @@ class AddWordForm extends Component {
   state = {
     id: "",
     origin: "",
-    translation: ""
+    translation: "",
+    isLearnt: ""
   };
 
   handleChange = e => {
     const id = uuid.v4();
     this.setState({
       id: id,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      isLearnt: false
     });
   };
 
@@ -27,7 +29,8 @@ class AddWordForm extends Component {
       this.setState({
         id: "",
         origin: "",
-        translation: ""
+        translation: "",
+        isLearnt: ""
       });
     }
   };
