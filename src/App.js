@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import Landing from "./components/Landing";
+import Categories from "./components/Categories";
+import DetailsCategory from "./components/watchBlock/DetailsCategory";
+import Study from "./components/studyBlock/Study";
+import Default from "./components/Default";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/categories" component={Categories} />
+          <Route exact path="/study/:category_id" component={Study} />
+          <Route
+            exact
+            path="/categories/:category_id"
+            component={DetailsCategory}
+          />
+          <Route component={Default} />
+        </Switch>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
