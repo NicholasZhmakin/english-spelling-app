@@ -1423,9 +1423,9 @@ progress[value]::-moz-progress-bar {
   padding: 5px;
   position: absolute;
   z-index: 1;
-  top: 0;
+  top: 3px;
   left: 0;
-  margin-left: -60px;
+  margin-left: -50px;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -1433,12 +1433,12 @@ progress[value]::-moz-progress-bar {
 .study__skip-tooltip::after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 100%;
-  margin-left: -5px;
-  border-width: 5px;
+
+  border-width: 4px;
   border-style: solid;
-  border-color: transparent #555 transparent transparent;
+  border-color: transparent transparent transparent #555;
 }
 
 .study__skip-btn:hover .study__skip-tooltip {
