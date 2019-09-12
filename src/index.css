@@ -868,17 +868,26 @@ progress[value]::-moz-progress-bar {
 
 .add-word__form {
   display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-gap: 5px;
+  grid-template-columns: repeat(3, auto);
+  padding: 10px;
+}
+
+.add-word__form > div {
+  display: grid;
+  grid-template-columns: auto minmax(auto, 200px);
   justify-content: center;
   align-items: center;
-  grid-gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
 }
 
 .add-word__form label {
   text-transform: capitalize;
-  margin-right: 10px;
+  text-align: center;
   font-weight: 900;
   font-family: "Changa", sans-serif;
+  margin-right: 5px;
 }
 
 .add-word__form input[type="text"] {
@@ -1212,13 +1221,10 @@ progress[value]::-moz-progress-bar {
 @media screen and (max-width: 830px) {
   .add-word__form {
     grid-template-columns: 1fr;
+    grid-gap: 20px;
   }
   .add-word__form > div {
-    display: grid;
-    grid-template-columns: 100px 200px;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+    grid-template-columns: 90px minmax(auto, 200px);
   }
 }
 
@@ -1232,6 +1238,9 @@ progress[value]::-moz-progress-bar {
 
 @media screen and (max-width: 640px) {
   .details__title {
+    grid-template-columns: auto;
+  }
+  .add-word__form > div {
     grid-template-columns: auto;
   }
 }
